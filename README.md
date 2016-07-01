@@ -1,4 +1,4 @@
-Phonegap-Android-VolumeControl-Maximum
+Phonegap-Android-AirPlaneMode
 ==============================
 
 Set AirPlaneMode Configuration.
