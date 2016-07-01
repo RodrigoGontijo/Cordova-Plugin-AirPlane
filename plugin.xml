@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.rodrigo.plugins.airPlaneMode"
+        version="1.0">
+
+    <name>Android AirPlane Mode Plugin</name>
+
+    <description>
+        Allows configure airPlaneMode.
+    </description>
+
+    <license>MIT</license>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AirPlaneMode">
+                <param name="android-package" value="com.rodrigo.plugins.airPlaneMode.AirPlaneMode" />
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+            <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+        </config-file>
+
+        <js-module src="www/AirPlaneMode.js" name="AirPlaneMode">
+            <clobbers target="cordova.plugins.AirPlaneMode" />
+        </js-module>
+
+        <source-file src="src/android/AirPlaneMode.java" target-dir="src/com/rodrigo/plugins/airPlaneMode" />
+
+    </platform>
+</plugin>
