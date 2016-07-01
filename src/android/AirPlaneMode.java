@@ -19,7 +19,7 @@ import android.provider.Settings;
 import android.content.Context;
 import android.media.*;
 
-public class VolumeMax extends CordovaPlugin {
+public class AirPlaneMode extends CordovaPlugin {
 
     public static final String SETON = "setAirPlaneModeOn";
     public static final String SETOFF = "setAirPlaneModeOff";
@@ -70,7 +70,7 @@ public class VolumeMax extends CordovaPlugin {
 
                 Intent intent = new Intent(Intent.ACTION_AIRPLANE_MODE_CHANGED);
                 intent.putExtra("state", !isEnabled);
-                sendBroadcast(intent);
+                context.sendBroadcast(intent);
 
             } catch (Exception e) {
                 LOG.d(TAG, "Error setting volume " + e);
