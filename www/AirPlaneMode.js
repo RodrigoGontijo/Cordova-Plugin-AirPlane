@@ -1,5 +1,5 @@
 /*
- * Phonegap VolumeMax Plugin for Android
+ * Phonegap AirPlaneMode Plugin for Android
  * Cordova 2.2.0
  * Email: rodrigo[dot]gontijo[at]hotmail[dot]com
  * Author: Rodrigo Augusto Gontijo

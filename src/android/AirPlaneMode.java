@@ -59,18 +59,19 @@ public class AirPlaneMode extends CordovaPlugin {
 
         if (TOGGLE.equals(action)) {
             try {
-                boolean isEnabled = Settings.System.getInt(
+                boolean isEnabled = Settings.Global.getInt(
                         context.getContentResolver(),
                         Settings.Global.AIRPLANE_MODE_ON, 0) == 1;
 
-                Settings.System.putInt(
+                Settings.Global.putInt(
                         context.getContentResolver(),
                         Settings.Global.AIRPLANE_MODE_ON, isEnabled ? 0 : 1);
-                callbackContext.success();
 
                 Intent intent = new Intent(Intent.ACTION_AIRPLANE_MODE_CHANGED);
                 intent.putExtra("state", !isEnabled);
                 context.sendBroadcast(intent);
+
+                callbackContext.success();
 
             } catch (Exception e) {
                 LOG.d(TAG, "Error setting volume " + e);
