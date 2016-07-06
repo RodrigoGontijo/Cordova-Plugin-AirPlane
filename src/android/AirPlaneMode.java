@@ -35,7 +35,14 @@ public class AirPlaneMode extends CordovaPlugin {
         context = cordova.getActivity().getApplicationContext();
         if (SETON.equals(action)) {
             try {
-                //Set all volumes to max
+                Settings.Global.putInt(
+                        context.getContentResolver(),
+                        Settings.Global.AIRPLANE_MODE_ON, 1);
+
+                Intent intent = new Intent(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+                intent.putExtra("state", 1);
+                context.sendBroadcast(intent);
+
 
                 callbackContext.success();
 
@@ -47,7 +54,14 @@ public class AirPlaneMode extends CordovaPlugin {
 
         if (SETOFF.equals(action)) {
             try {
-                //Set all volumes to max
+                Settings.Global.putInt(
+                        context.getContentResolver(),
+                        Settings.Global.AIRPLANE_MODE_ON, 0);
+
+                Intent intent = new Intent(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+                intent.putExtra("state", 0);
+                context.sendBroadcast(intent);
+
                 callbackContext.success();
 
             } catch (Exception e) {
