@@ -16,7 +16,7 @@ var AirPlaneMode = {
 			'AirPlaneMode',
 			'setAirPlaneModeOn',
 			[]);
-	}
+	},
 
 	setAirPlaneModeOff: function(successCallback, failureCallback){
 		return exec(
@@ -25,7 +25,7 @@ var AirPlaneMode = {
 			'AirPlaneMode',
 			'setAirPlaneModeOff',
 			[]);
-	}
+	},
 
 
 	toggleAirPlaneMode: function(successCallback, failureCallback){
