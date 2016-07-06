@@ -29,7 +29,7 @@
         </config-file>
 
         <js-module src="www/AirPlaneMode.js" name="AirPlaneMode">
-            <clobbers target="cordova.plugins.AirPlaneMode" />
+            <clobbers target="window.plugins.AirPlaneMode" />
         </js-module>
 
         <source-file src="src/android/AirPlaneMode.java" target-dir="src/com/rodrigo/plugins/airPlaneMode" />
